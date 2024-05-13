@@ -39,7 +39,7 @@ const BooksCard = ({ book }) => {
         </div>
         <div>
           <Link to={`/updatebook/${_id}`}>
-            <button className="  py-3 btn-block rounded-lg bg-rose-500 text-white font-bold">
+            <button className="py-3 btn-block rounded-lg bg-rose-500 text-white font-bold">
               Update
             </button>
           </Link>
