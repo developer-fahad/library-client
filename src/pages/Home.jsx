@@ -18,88 +18,6 @@ const Home = () => {
 
   return (
     <div>
-      <section className="hidden">
-        <div className="">
-          <Swiper
-            slidesPerView={1}
-            spaceBetween={30}
-            loop={true}
-            pagination={{
-              clickable: true,
-            }}
-            navigation={true}
-            modules={[Pagination, Navigation]}
-            className="mySwiper xl:h-[650px] lg:h-[500px] md:h-[400px] h-[220px]"
-          >
-            <SwiperSlide
-              className="relative"
-              style={{
-                backgroundImage: `url(https://i.ibb.co/Zm36rbX/pexels-2dreamersphoto-2716895.jpg)`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                width: "100%",
-                height: "100%",
-              }}
-            >
-              <div className="absolute h-full w-full bg-black bg-opacity-70">
-                <div className="flex flex-col space-y-3 lg:text-4xl md:text-3xl text-xl h-full justify-center items-center px-2">
-                  <h1 className="text-white font-bold ">Super Hero</h1>
-                  <Link
-                    className="py-2 px-5 rounded-full text-lg bg-sky-500 text-white font-bold"
-                    to="/allartcraft"
-                  >
-                    View All
-                  </Link>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide
-              className="relative"
-              style={{
-                backgroundImage: `url(https://i.ibb.co/q15K0Gm/pexels-curiosophotography-288100.jpg )`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                width: "100%",
-                height: "100%",
-              }}
-            >
-              <div className="absolute h-full w-full bg-black bg-opacity-70">
-                <div className="flex flex-col space-y-3 lg:text-4xl md:text-3xl text-xl h-full justify-center items-center">
-                  <h1 className="text-white font-bold">Most Beautiful</h1>
-                  <Link
-                    className="py-2 px-5 rounded-full text-lg bg-sky-500 text-white font-bold"
-                    to="/allartcraft"
-                  >
-                    View All
-                  </Link>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide
-              className="relative"
-              style={{
-                backgroundImage: `url(https://i.ibb.co/r56ZcJD/pexels-sofya-borboris-239815738-12261002.jpg)`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                width: "100%",
-                height: "100%",
-              }}
-            >
-              <div className="absolute h-full w-full bg-black bg-opacity-70">
-                <div className="flex flex-col space-y-3 lg:text-4xl md:text-3xl text-xl h-full justify-center items-center">
-                  <h1 className="text-white font-bold">Pencil Sketch</h1>
-                  <Link
-                    className="py-2 px-5 rounded-full text-lg bg-sky-500 text-white font-bold"
-                    to="/allartcraft"
-                  >
-                    View All
-                  </Link>
-                </div>
-              </div>
-            </SwiperSlide>
-          </Swiper>
-        </div>
-      </section>
       <section>
         <div
           className="hero min-h-screen"
@@ -108,16 +26,22 @@ const Home = () => {
               "url(https://i.ibb.co/bsB04y2/pexels-tima-miroshnichenko-9572630.jpg)",
           }}
         >
-          <div className="hero-overlay bg-opacity-60"></div>
+          <div className="hero-overlay bg-opacity-70"></div>
           <div className="hero-content text-center text-neutral-content">
-            <div className="max-w-md">
-              <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+            <div className="md:max-w-md lg:max-w-lg xl:max-w-xl max-w-full">
+              <h1 className="mb-5 xl:text-5xl md:text-3xl text-2xl font-bold">
+                Welcome to <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-cyan-800">QuillBooks</span> Library
+              </h1>
               <p className="mb-5">
-                Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                assumenda excepturi exercitationem quasi. In deleniti eaque aut
-                repudiandae et a id nisi.
+                Immerse Yourself in Worlds of Words. Dive into a world of
+                literature with QuillBooks Library. Discover endless stories,
+                expand your horizons, and feed your imagination.
               </p>
-              <button className="btn btn-primary">Get Started</button>
+              <Link to='/login'>
+                <button className="py-3 px-5 font-bold bg-gradient-to-r from-green-700 to-cyan-800 text-white">
+                  Explore
+                </button>
+              </Link>
             </div>
           </div>
         </div>
