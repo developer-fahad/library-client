@@ -12,7 +12,7 @@ const AddBooks = () => {
     const rating = form.rating.value;
     const description = form.description.value;
     const author = form.author.value;
-    const quantity = form.quantity.value;
+    const quantity = parseInt(form.quantity.value);
     const category = form.category.value;
     const photo = form.photo.value;
     const user = form.user.value;
@@ -35,10 +35,10 @@ const AddBooks = () => {
     };
     console.log(newBooks);
 
-    //https://art-store-server.vercel.app/paintings
-    //http://localhost:5000/paintings
+    //https://library-server-pink.vercel.app
+    //http://localhost:5000
     
-    fetch("https://art-store-server.vercel.app/paintings", {
+    fetch("https://library-server-pink.vercel.app/books", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -51,13 +51,13 @@ const AddBooks = () => {
         if (data.insertedId) {
           Swal.fire({
             title: "Success!",
-            text: "New Paiting Added Successfully!",
+            text: "New Book Added Successfully!",
             icon: "success",
             confirmButtonText: "Cool",
           });
           // Swal.fire("New Coffee Added Successfully!")
         }
-        // form.reset();
+        form.reset();
       });
   };
 
@@ -86,10 +86,8 @@ const AddBooks = () => {
             <select className="border py-2 px-5" required name="category" id="dropdown">
               <option value="Novel">Novel</option>
               <option value="Fiction">Fiction</option>
-              <option value="Romance">Romance</option>
               <option value="Horror">Horror</option>
               <option value="Mystery">Mystery</option>
-              <option value="Self Development">Self Development</option>
             </select>
           </div>
         </div>

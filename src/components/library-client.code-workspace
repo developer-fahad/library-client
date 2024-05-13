@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../car-doctor-client"
+		},
+		{
+			"path": "../../../art-store-client"
+		}
+	],
+	"settings": {}
+}

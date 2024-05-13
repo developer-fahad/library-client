@@ -10,15 +10,15 @@ import { useEffect, useState } from "react";
 const Home = () => {
   const [categories, setCategories] = useState([]);
   console.log(categories);
-  useEffect(() =>{
-    fetch('http://localhost:5000/categories')
-    .then(res => res.json())
-    .then(data => setCategories(data))
-  }, [])
+  useEffect(() => {
+    fetch("https://library-server-pink.vercel.app/categories")
+      .then((res) => res.json())
+      .then((data) => setCategories(data));
+  }, []);
 
   return (
     <div>
-      <section className="">
+      <section className="hidden">
         <div className="">
           <Swiper
             slidesPerView={1}
@@ -100,14 +100,38 @@ const Home = () => {
           </Swiper>
         </div>
       </section>
+      <section>
+        <div
+          className="hero min-h-screen"
+          style={{
+            backgroundImage:
+              "url(https://i.ibb.co/bsB04y2/pexels-tima-miroshnichenko-9572630.jpg)",
+          }}
+        >
+          <div className="hero-overlay bg-opacity-60"></div>
+          <div className="hero-content text-center text-neutral-content">
+            <div className="max-w-md">
+              <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+              <p className="mb-5">
+                Provident cupiditate voluptatem et in. Quaerat fugiat ut
+                assumenda excepturi exercitationem quasi. In deleniti eaque aut
+                repudiandae et a id nisi.
+              </p>
+              <button className="btn btn-primary">Get Started</button>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="py-5 md:py-8 lg:py-12 container mx-auto px-2">
         <div className="pb-5 md:pb-8 lg:pb-12 flex justify-center items-center">
-            <h1 className="font-bold text-xl md:text-2xl lg:text-4xl lg:text-rose-500 xl:text-black">All Categories</h1>
+          <h1 className="font-bold text-xl md:text-2xl lg:text-4xl lg:text-rose-500 xl:text-black">
+            All Categories
+          </h1>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-3 md:gap-5 lg:gap-8 xl:gap-10">
-          {
-            categories.map(cat => <CatCard key={cat._id} cat={cat}></CatCard>)
-          }
+          {categories.map((cat) => (
+            <CatCard key={cat._id} cat={cat}></CatCard>
+          ))}
         </div>
       </section>
     </div>

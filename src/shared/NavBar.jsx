@@ -37,7 +37,7 @@ const NavBar = () => {
           to={"/"}
           className={({ isActive }) =>
             isActive
-              ? "py-1 bg-transparent rounded-none border-b-2 border-b-[#012A2D] text-[#012A2D"
+              ? "py-1 bg-transparent rounded-none border-b-2 border-b-[#012A2D] bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-cyan-800"
               : "font-bold py-1 hover:rounded-none text-[#012A2D] hover:bg-none  hover:border-b-2 border-b-2 rounded-none border-b-transparent  hover:border-b-[#012A2D]"
           }
         >
@@ -50,7 +50,7 @@ const NavBar = () => {
           to={"/allbooks"}
           className={({ isActive }) =>
             isActive
-              ? "py-1 bg-transparent rounded-none border-b-2 border-b-[#012A2D] text-[#012A2D"
+              ? "py-1 bg-transparent rounded-none border-b-2 border-b-[#012A2D] bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-cyan-800"
               : "font-bold py-1 hover:rounded-none text-[#012A2D] hover:bg-none  hover:border-b-2 border-b-2 rounded-none border-b-transparent  hover:border-b-[#012A2D]"
           }
         >
@@ -64,7 +64,7 @@ const NavBar = () => {
               to={"/borrowedbooks"}
               className={({ isActive }) =>
                 isActive
-                  ? "py-1 bg-transparent rounded-none border-b-2 border-b-[#012A2D] text-[#012A2D"
+                  ? "py-1 bg-transparent rounded-none border-b-2 border-b-[#012A2D] bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-cyan-800"
                   : "font-bold py-1 hover:rounded-none text-[#012A2D] hover:bg-none  hover:border-b-2 border-b-2 rounded-none border-b-transparent  hover:border-b-[#012A2D]"
               }
             >
@@ -77,7 +77,7 @@ const NavBar = () => {
               to={"/addbooks"}
               className={({ isActive }) =>
                 isActive
-                  ? "py-1 bg-transparent rounded-none border-b-2 border-b-[#012A2D] text-[#012A2D]"
+                  ? "py-1 bg-transparent rounded-none border-b-2 border-b-[#012A2D] bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-cyan-800"
                   : "font-bold py-1 hover:rounded-none text-[#012A2D] hover:bg-none  hover:border-b-2 border-b-2 rounded-none border-b-transparent hover:border-b-[#012A2D] "
               }
             >
@@ -125,9 +125,9 @@ const NavBar = () => {
             </div>
             <Link
               to="/"
-              className="xl:text-5xl lg:text-4xl md:text-3xl text-xl font-bold"
+              className="xl:text-5xl lg:text-4xl md:text-3xl text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-cyan-800"
             >
-              Books
+              QuillBooks
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
@@ -182,7 +182,7 @@ const NavBar = () => {
                     <li className="">
                       <Link
                         onClick={handleLogout}
-                        className="xl:px-3 px-2 xl:py-2 md:py-2 md:px-5 py-1 md:font-bold font-semibold md:text-base hover:bg-[#012A2D] text-sm bg-[#012A2D] text-white"
+                        className="xl:px-3 px-2 xl:py-2 md:py-2 md:px-5 py-1 md:font-bold font-semibold md:text-base hover:bg-[#012A2D] text-sm bg-gradient-to-r from-green-700 to-cyan-800 text-white"
                       >
                         Logout
                       </Link>
@@ -193,12 +193,12 @@ const NavBar = () => {
             ) : (
               <div className="flex items-center md:gap-8 gap-2">
                 <Link to="/login">
-                  <button className="xl:px-3 px-2 xl:py-2 md:py-2 md:px-5 py-1 md:font-bold font-semibold md:text-base text-sm bg-[#012A2D] text-white">
+                  <button className="xl:px-3 px-2 xl:py-2 md:py-2 md:px-5 py-1 md:font-bold font-semibold md:text-base text-sm bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-cyan-800">
                     Login
                   </button>
                 </Link>
                 <Link to="/register">
-                  <button className="xl:px-3 px-2 xl:py-2 md:py-2 md:px-5 py-1 md:font-bold font-semibold md:text-base text-sm bg-[#012A2D] text-white">
+                  <button className="xl:px-3 px-2 xl:py-2 md:py-2 md:px-5 py-1 md:font-bold font-semibold md:text-base text-sm bg-gradient-to-r from-green-700 to-cyan-800 text-white">
                     Register
                   </button>
                 </Link>

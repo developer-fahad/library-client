@@ -139,8 +139,8 @@ const Register = () => {
               )} */}
             </div>
             <div>
-              <button className="w-full py-3 bg-[#012A2D] text-white font-bold">
-                Submit
+              <button className="w-full py-3 bg-gradient-to-r from-green-700 to-cyan-800 text-white font-bold">
+                Register
               </button>
             </div>
             <div className="text-center ">

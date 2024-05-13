@@ -13,7 +13,7 @@ const CatCard = ({ cat }) => {
           <img className="h-full hover:scale-110 hover:transition" src={img} alt="Movie" />
         </div>
         <div className=" w-full">
-          <Link to='/'><button className="py-2 w-full bg-rose-500 text-white font-bold">View All</button></Link>
+          <Link to={`/catitem/${category}`}><button className="py-2 w-full bg-rose-500 text-white font-bold">View All</button></Link>
           
         </div>
       </figure>

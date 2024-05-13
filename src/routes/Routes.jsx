@@ -8,6 +8,10 @@ import AddBooks from "../pages/AddBooks";
 import PrivateRoutes from "./PrivateRoutes";
 import BorrowedBooks from "../pages/BorrowedBooks";
 import Error from "../pages/Error";
+import UpdateBook from "../pages/UpdateBook";
+import CatItems from "../pages/CatItems";
+import DetailsPage from "../pages/DetailsPage";
+import BorrowForm from "../pages/BorrowForm";
 
 const router = createBrowserRouter([
     {
@@ -21,11 +25,32 @@ const router = createBrowserRouter([
         },
         {
             path: '/allbooks',
-            element: <AllBooks></AllBooks>
+            element: <PrivateRoutes><AllBooks></AllBooks></PrivateRoutes>,
+            loader: () => fetch('https://library-server-pink.vercel.app/books')
+        },
+        {
+            path: '/updatebook/:id',
+            element: <PrivateRoutes><UpdateBook></UpdateBook></PrivateRoutes>,
+            loader: ({params}) => fetch(`https://library-server-pink.vercel.app/books/${params.id}`)
+        },
+        {
+            path: '/catitem/:cat',
+            element: <CatItems></CatItems>,
+            loader: ({params}) => fetch(`https://library-server-pink.vercel.app/categories/${params.cat}`)
+        },
+        {
+            path: '/details/:id',
+            element: <PrivateRoutes><DetailsPage></DetailsPage></PrivateRoutes>,
+            loader: ({params}) => fetch(`https://library-server-pink.vercel.app/books/${params.id}`)
+        },
+        {
+            path: '/borrow/:id',
+            element: <PrivateRoutes><BorrowForm></BorrowForm></PrivateRoutes>,
+            loader: ({params}) => fetch(`https://library-server-pink.vercel.app/books/${params.id}`)
         },
         {
             path: '/borrowedbooks',
-            element: <BorrowedBooks></BorrowedBooks>
+            element: <PrivateRoutes><BorrowedBooks></BorrowedBooks></PrivateRoutes>
         },
         {
             path: '/addbooks',
