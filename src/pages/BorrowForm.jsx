@@ -34,7 +34,7 @@ const BorrowForm = () => {
       }
       console.log(borrow);
 
-      fetch('https://library-server-pink.vercel.app/borrow', {
+      fetch('http://localhost:5000/borrow', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

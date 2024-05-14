@@ -92,10 +92,10 @@ const DetailsPage = () => {
                 className={`py-3 px-5 ${
                   quantity < 1
                     ? "bg-gray-400 cursor-not-allowed"
-                    : "bg-green-500 text-white font-bold"
+                    : "bg-rose-500 text-white font-bold"
                 }`}
               >
-                Purchase
+                Borrow
               </button>
               {/* Modal */}
               {isModalOpen && (

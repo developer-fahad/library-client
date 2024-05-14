@@ -9,7 +9,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Home = () => {
-  const {user} = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [categories, setCategories] = useState([]);
   console.log(categories);
   useEffect(() => {
@@ -22,10 +22,13 @@ const Home = () => {
     <div>
       <section>
         <div
-          className="hero min-h-screen"
+          className="hero min-h-[550px]"
           style={{
             backgroundImage:
               "url(https://i.ibb.co/bsB04y2/pexels-tima-miroshnichenko-9572630.jpg)",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
           }}
         >
           <div className="hero-overlay bg-opacity-70"></div>

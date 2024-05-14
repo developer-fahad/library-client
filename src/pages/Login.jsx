@@ -30,7 +30,7 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error);
-        toast.error("Password didn't match!");
+        toast.error("Invalid Email or Password!");
       });
   };
 
