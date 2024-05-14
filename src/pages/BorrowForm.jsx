@@ -53,10 +53,11 @@ const BorrowForm = () => {
             // Swal.fire("New Coffee Added Successfully!")
             
           }
-          else{
-            toast.error("Your already borrowed.")
-          }
       })
+      .catch((error) => {
+        toast.error("Already borrowed this book!.");
+        console.error("Error borrowing book:", error);
+      });
   };
   
 

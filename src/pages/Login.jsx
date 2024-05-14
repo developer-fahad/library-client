@@ -82,21 +82,6 @@ const Login = () => {
                 placeholder="Password"
                 {...register("password", { required: true })}
               />
-
-              {/* <span className="absolute -ml-8 mt-3"> */}
-              {/* <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setShowPass(!showPass);
-                  }}
-                >
-                  {showPass ? (
-                    <FaRegEyeSlash></FaRegEyeSlash>
-                  ) : (
-                    <FaRegEye></FaRegEye>
-                  )}
-                </button> */}
-              {/* </span> */}
               {errors.password && (
                 <span className="text-red-500">
                   <small>Password required</small>

@@ -83,9 +83,9 @@ const Home = () => {
                 There are group study rooms, individual study carrels, computers
                 labs, and other spaces to study in the Libraries.
               </p>
-              <Link to="/login">
+              <Link>
                 <button className="py-3 px-5 font-bold bg-gradient-to-r from-green-700 to-cyan-800 text-white">
-                  Explore
+                  Reserve Room
                 </button>
               </Link>
             </div>
@@ -93,6 +93,23 @@ const Home = () => {
         </div>
         <div>
           <h1></h1>
+        </div>
+      </section>
+      <section className="bg-gradient-to-r from-orange-600 to-orange-500">
+        <div className="py-20 px-5 flex flex-col lg:flex-row justify-between items-center md:gap-10 gap-8 ">
+          <div className="space-y-5 md:justify-start justify-center text-white">
+            <p className="lg:text-left text-center">Donation</p>
+            <h1 className="mb-5 xl:text-5xl md:text-4xl text-2xl lg:text-left text-center font-bold ">
+              Support the Library, Give Today.
+            </h1>
+          </div>
+          <div>
+            <Link>
+              <button className="py-5 px-5 font-bold bg-gradient-to-r from-green-700 to-cyan-800 rounded-full text-white">
+                Make A Donation
+              </button>
+            </Link>
+          </div>
         </div>
       </section>
     </div>
