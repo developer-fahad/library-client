@@ -2,6 +2,7 @@ import { useState } from "react";
 import { GoStar, GoStarFill } from "react-icons/go";
 import Rating from "react-rating";
 import { Link, useLoaderData } from "react-router-dom";
+import ModalForm from "./ModalForm";
 
 const DetailsPage = () => {
   const book = useLoaderData();
@@ -17,6 +18,16 @@ const DetailsPage = () => {
     content,
   } = book;
   console.log(book);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <div className="min-h-screen">
@@ -61,7 +72,7 @@ const DetailsPage = () => {
               {quantity}
             </p>
             <div>
-              <Link to={`/borrow/${_id}`}>
+              {/* <Link to={`/borrow/${_id}`}>
                 <button
                   disabled={quantity < 1}
                   className={`py-3 px-5 ${
@@ -72,10 +83,11 @@ const DetailsPage = () => {
                 >
                   Borrow
                 </button>
-              </Link>
+              </Link> */}
 
-              {/* Experiment for modal show  */}
+              {/* Experiment for Modal Showing */}
               <button
+                onClick={handleOpenModal}
                 disabled={quantity < 1}
                 className={`py-3 px-5 ${
                   quantity < 1
@@ -83,10 +95,33 @@ const DetailsPage = () => {
                     : "bg-green-500 text-white font-bold"
                 }`}
               >
-                Borrow
+                Purchase
               </button>
-              {/* Experiment for modal show  */}
-
+              {/* Modal */}
+              {isModalOpen && (
+                <div className="fixed z-10 inset-0 overflow-y-auto">
+                  <div className="flex items-center justify-center min-h-screen">
+                    <dialog
+                      id="my_modal_4"
+                      className="modal"
+                      open={isModalOpen} // Ensure the modal is open when isModalOpen is true
+                    >
+                      <div className="modal-box w-11/12 max-w-5xl">
+                        <h3 className="font-bold text-lg">Hello!</h3>
+                        <ModalForm onCloseModal={handleCloseModal}></ModalForm>
+                            {/* Close button */}
+                            <div className="flex justify-center py-5">
+                            <button className="btn btn-block bg-rose-500 text-white font-bold" onClick={handleCloseModal}>
+                              Close
+                            </button>
+                            </div>
+                            
+                      </div>
+                    </dialog>
+                  </div>
+                </div>
+              )}
+              {/* Experiment for Modal Showing */}
             </div>
           </div>
         </div>
@@ -102,79 +137,3 @@ const DetailsPage = () => {
 };
 
 export default DetailsPage;
-
-// import React, { useState } from "react";
-// import { FaStar } from "react-icons/fa";
-// import { GoStar, GoStarFill } from "react-icons/go";
-// import { IoIosAddCircleOutline } from "react-icons/io";
-// import Rating from "react-rating";
-// import { Link, useLoaderData } from "react-router-dom";
-// import BorrowForm from "./BorrowForm";
-// import Swal from "sweetalert2";
-
-// const DetailsPage = () => {
-//   const book = useLoaderData();
-//   const {
-//     _id,
-//     name,
-//     author,
-//     category,
-//     description,
-//     quantity,
-//     rating,
-//     photo,
-//     content,
-//   } = book;
-
-//   const [isModalOpen, setIsModalOpen] = useState(false);
-
-//   const handleCloseModal = () => {
-//     setIsModalOpen(false);
-//   };
-
-//   return (
-//     <div className="min-h-screen">
-//       <section className="container mx-auto">
-//         {/* Book details */}
-//         {/* Other details */}
-
-//         {/* Button to open modal */}
-//         <button
-//           className="btn"
-//           onClick={() => setIsModalOpen(true)}
-//           disabled={isModalOpen}
-//         >
-//           Open modal
-//         </button>
-//       </section>
-
-//       {/* Modal */}
-//       {isModalOpen && (
-//         <div className="fixed z-10 inset-0 overflow-y-auto">
-//           <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-//             <div className="fixed inset-0 transition-opacity" aria-hidden="true">
-//               <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
-//             </div>
-//             <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-//             <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-//               <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-//                 <BorrowForm book={book} onCloseModal={handleCloseModal} />
-//               </div>
-//               <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-//                 <button
-//                   onClick={handleCloseModal}
-//                   type="button"
-//                   className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-rose-500 text-base font-medium text-white hover:bg-rose-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500 sm:ml-3 sm:w-auto sm:text-sm"
-//                 >
-//                   Close
-//                 </button>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default DetailsPage;

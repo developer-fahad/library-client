@@ -1,16 +1,17 @@
 import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
 
-const BorrowForm = () => {
+const ModalForm = ({ onCloseModal }) => {
   const book = useLoaderData();
   const {_id, name, photo, category, quantity} = book;
   // const {_id, name, photo, category, quantity} = modalBook;
   const bookId = _id;
   console.log(quantity);
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
   console.log(user);
   console.log(book);
 
@@ -52,20 +53,22 @@ const BorrowForm = () => {
               confirmButtonText: "Cool",
             });
             // Swal.fire("New Coffee Added Successfully!")
-            // onCloseModal();
+            onCloseModal();
+            navigate('/borrowedbooks');
           }
       })
       .catch((error) => {
         toast.error("Already borrowed this book!.");
-        console.error(error);
+        console.error("Error borrowing book:", error);
+          onCloseModal();
       });
   };
   
 
   return (
-    <div className="flex items-center min-h-screen bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">
+    <div className="flex">
       <section className="container mx-auto">
-        <div className="h-full flex justify-center items-center">
+        <div className="h-full flex justify-center">
           <form onSubmit={handleBorrow} className=" md:w-2/6 w-full p-8 shadow-xl rounded-md border bg-white">
             <div>
               <label><strong>Borrow Date</strong></label>
@@ -124,7 +127,7 @@ const BorrowForm = () => {
   );
 };
 
-export default BorrowForm;
+export default ModalForm;
 
 
 

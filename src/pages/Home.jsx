@@ -5,9 +5,11 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import CatCard from "../components/CatCard";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Home = () => {
+  const {user} = useContext(AuthContext);
   const [categories, setCategories] = useState([]);
   console.log(categories);
   useEffect(() => {
@@ -41,7 +43,7 @@ const Home = () => {
                 literature with QuillBooks Library. Discover endless stories,
                 expand your horizons, and feed your imagination.
               </p>
-              <Link to="/login">
+              <Link>
                 <button className="py-3 px-5 font-bold bg-gradient-to-r from-green-700 to-cyan-800 text-white">
                   Explore
                 </button>

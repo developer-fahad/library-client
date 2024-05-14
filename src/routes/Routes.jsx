@@ -12,6 +12,7 @@ import UpdateBook from "../pages/UpdateBook";
 import CatItems from "../pages/CatItems";
 import DetailsPage from "../pages/DetailsPage";
 import BorrowForm from "../pages/BorrowForm";
+import ModalForm from "../pages/ModalForm";
 
 const router = createBrowserRouter([
     {
@@ -48,6 +49,12 @@ const router = createBrowserRouter([
             element: <PrivateRoutes><BorrowForm></BorrowForm></PrivateRoutes>,
             loader: ({params}) => fetch(`https://library-server-pink.vercel.app/books/${params.id}`)
         },
+        // {
+        //     path: '/borrow/:id',
+        //     element: <PrivateRoutes><ModalForm></ModalForm></PrivateRoutes>,
+        //     loader: ({params}) => fetch(`https://library-server-pink.vercel.app/books/${params.id}`)
+        // },
+        
         {
             path: '/borrowedbooks',
             element: <PrivateRoutes><BorrowedBooks></BorrowedBooks></PrivateRoutes>
