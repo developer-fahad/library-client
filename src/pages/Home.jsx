@@ -30,14 +30,18 @@ const Home = () => {
           <div className="hero-content text-center text-neutral-content">
             <div className="md:max-w-md lg:max-w-lg xl:max-w-xl max-w-full">
               <h1 className="mb-5 xl:text-5xl md:text-3xl text-2xl font-bold">
-                Welcome to <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-cyan-800">QuillBooks</span> Library
+                Welcome to{" "}
+                <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-cyan-800">
+                  QuillBooks
+                </span>{" "}
+                Library
               </h1>
               <p className="mb-5">
                 Immerse Yourself in Worlds of Words. Dive into a world of
                 literature with QuillBooks Library. Discover endless stories,
                 expand your horizons, and feed your imagination.
               </p>
-              <Link to='/login'>
+              <Link to="/login">
                 <button className="py-3 px-5 font-bold bg-gradient-to-r from-green-700 to-cyan-800 text-white">
                   Explore
                 </button>
@@ -56,6 +60,39 @@ const Home = () => {
           {categories.map((cat) => (
             <CatCard key={cat._id} cat={cat}></CatCard>
           ))}
+        </div>
+      </section>
+      <section>
+        <div
+          className="hero min-h-[500px]"
+          style={{
+            backgroundImage:
+              "url(https://i.ibb.co/1b8ZMMp/pexels-cottonbro-6334763.jpg)",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <div className="hero-overlay bg-opacity-70"></div>
+          <div className="hero-content text-center text-neutral-content">
+            <div className="md:max-w-md lg:max-w-lg xl:max-w-xl max-w-full">
+              <h1 className="mb-5 xl:text-5xl md:text-4xl text-2xl font-bold">
+                Place To Study
+              </h1>
+              <p className="mb-5">
+                There are group study rooms, individual study carrels, computers
+                labs, and other spaces to study in the Libraries.
+              </p>
+              <Link to="/login">
+                <button className="py-3 px-5 font-bold bg-gradient-to-r from-green-700 to-cyan-800 text-white">
+                  Explore
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h1></h1>
         </div>
       </section>
     </div>
