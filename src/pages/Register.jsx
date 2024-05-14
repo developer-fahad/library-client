@@ -19,15 +19,15 @@ const Register = () => {
   } = useForm();
 
   const validatePass = (value) => {
-    if (!/(?=.*[a-z])/.test(value)) {
-      return "Password must contain at least one lowercase letter";
-    }
+    // if (!/(?=.*[a-z])/.test(value)) {
+    //   return "Password must contain at least one lowercase letter";
+    // }
     if (!/(?=.*[A-Z])/.test(value)) {
       return "Password must contain at least one uppercase letter";
     }
-    // if (!/(?=.*[!@#$%^&*])/.test(value)) {
-    //   return "Password must contain at least one special character";
-    // }
+    if (!/(?=.*[!@#$%^&*])/.test(value)) {
+      return "Password must contain at least one special character";
+    }
     return true;
   };
 

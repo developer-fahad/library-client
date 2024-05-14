@@ -5,7 +5,6 @@ const BorrowedCard = ({ borrow, handleReturn }) => {
   console.log(_id);
 
   
-
   return (
     <div className="flex flex-col md:flex-row gap-3 py-3 px-3 rounded-xl shadow-xl">
       <div className="w-full md:w-2/6">
