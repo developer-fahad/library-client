@@ -2,21 +2,17 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="py-12 bg-neutral">
+    <div className=" bg-neutral">
       <section className="container mx-auto">
         <footer className="footer p-10 bg-neutral text-neutral-content">
           <aside>
             <Link
               to="/"
-              className="xl:text-5xl lg:text-4xl md:text-3xl text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-cyan-800"
+              className="xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-cyan-800"
             >
               QuillBooks
             </Link>
-            <p>
-              ACME Industries Ltd.
-              <br />
-              Providing reliable tech since 1992
-            </p>
+            <p>QuillBooks Public Library.</p>
           </aside>
           <nav>
             <h6 className="footer-title">Social</h6>
@@ -56,6 +52,11 @@ const Footer = () => {
               </a>
             </div>
           </nav>
+        </footer>
+        <footer className="footer footer-center p-4 bg-neutral text-neutral-content">
+          <aside>
+            <p>Copyright &copy;2024 - All right reserved by QuillBooks Public Library</p>
+          </aside>
         </footer>
       </section>
     </div>
