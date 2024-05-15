@@ -107,7 +107,6 @@ const DetailsPage = () => {
                       open={isModalOpen} // Ensure the modal is open when isModalOpen is true
                     >
                       <div className="modal-box w-11/12 max-w-5xl">
-                        <h3 className="font-bold text-lg">Hello!</h3>
                         <ModalForm onCloseModal={handleCloseModal}></ModalForm>
                             {/* Close button */}
                             <div className="flex justify-center py-5">
