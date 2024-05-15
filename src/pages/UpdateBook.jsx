@@ -27,7 +27,7 @@ const UpdateBook = () => {
         console.log(updatedBook);
     
         //https://library-server-pink.vercel.app
-        //http://localhost:5000
+        //https://library-server-pink.vercel.app
         
         fetch(`https://library-server-pink.vercel.app/books/${_id}`, {
           method: "PATCH",

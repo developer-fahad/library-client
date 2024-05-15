@@ -3,7 +3,7 @@ import Rating from "react-rating";
 import { Link } from "react-router-dom";
 
 const BooksCard = ({ book }) => {
-  console.log(book);
+  // console.log(book);
   const { _id, rating, category, photo, name, author } = book;
   return (
     <div className="flex flex-col md:flex-row gap-3 py-3 px-3 rounded-xl shadow-xl">

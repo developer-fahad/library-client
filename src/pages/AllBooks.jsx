@@ -2,12 +2,17 @@ import { useLoaderData } from "react-router-dom";
 import BooksCard from "../components/BooksCard";
 import { useState } from "react";
 import BooksTable from "../components/BooksTable";
+import axios from "axios";
 
 const AllBooks = () => {
-  const books = useLoaderData();
+  // const books = useLoaderData();
+  const [books, setBooks] = useState([]);
+
   console.log(books);
   const [showAvailableBooks, setShowAvailableBooks] = useState(false);
     const [viewType, setViewType] = useState('card');
+    axios('https://library-server-pink.vercel.app/books', {withCredentials: true})
+    .then(res => setBooks(res.data))
 
   const toggleAvailableBooks = () => {
     setShowAvailableBooks((prevState) => !prevState);

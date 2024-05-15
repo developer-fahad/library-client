@@ -27,7 +27,7 @@ const router = createBrowserRouter([
         {
             path: '/allbooks',
             element: <PrivateRoutes><AllBooks></AllBooks></PrivateRoutes>,
-            loader: () => fetch('https://library-server-pink.vercel.app/books')
+            // loader: () => fetch('https://library-server-pink.vercel.app/books')
         },
         {
             path: '/updatebook/:id',
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
         },
         {
             path: '/catitem/:cat',
-            element: <CatItems></CatItems>,
+            element: <PrivateRoutes><CatItems></CatItems></PrivateRoutes>,
             loader: ({params}) => fetch(`https://library-server-pink.vercel.app/categories/${params.cat}`)
         },
         {
