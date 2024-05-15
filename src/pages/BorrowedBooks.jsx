@@ -61,6 +61,14 @@ const BorrowedBooks = () => {
       });
   }, [url]);
 
+  if(allBorrows < 1){
+    return (
+      <div className="min-h-screen">
+        <h1>No data</h1>
+      </div>
+    )
+  }
+
   if (loading) {
     return (
       <div className="min-h-screen flex justify-center items-center">

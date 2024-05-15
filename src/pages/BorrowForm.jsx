@@ -113,7 +113,7 @@ const BorrowForm = () => {
               <input
                 type="submit"
                 value="Confirm to Borrow"
-                className="btn font-bold  btn-block bg-gradient-to-r from-emerald-500 from-10% via-sky-500 via-30% to-indigo-500 to-90% text-white"
+                className="btn font-bold btn-block bg-gradient-to-r from-emerald-500 from-10% via-sky-500 via-30% to-indigo-500 to-90% text-white"
               />
             </div>
           </form>

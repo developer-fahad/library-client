@@ -13,7 +13,7 @@ const AllBooks = () => {
     const [viewType, setViewType] = useState('card');
     const [loading, setLoading] = useState(true);
 
-    axios('https://library-server-pink.vercel.app/books', {withCredentials: true})
+    axios('https://library-server-pink.vercel.app/books',)
     .then(res => {
       setBooks(res.data);
       setLoading(false)
