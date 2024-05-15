@@ -100,7 +100,7 @@ const Home = () => {
           <h1></h1>
         </div>
       </section>
-      <section className="bg-gradient-to-r from-orange-600 to-orange-500">
+      <section className="bg-gradient-to-r from-orange-700 to-orange-500">
         <div className="py-20 px-5 flex flex-col lg:flex-row justify-between items-center md:gap-10 gap-8 ">
           <div className="space-y-5 md:justify-start justify-center text-white">
             <p className="lg:text-left text-center">Donation</p>
