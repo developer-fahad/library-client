@@ -1,4 +1,3 @@
-import { useLoaderData } from "react-router-dom";
 import BooksCard from "../components/BooksCard";
 import { useState } from "react";
 import BooksTable from "../components/BooksTable";
@@ -8,7 +7,7 @@ const AllBooks = () => {
   // const books = useLoaderData();
   const [books, setBooks] = useState([]);
 
-  console.log(books);
+  // console.log(books);
   const [showAvailableBooks, setShowAvailableBooks] = useState(false);
     const [viewType, setViewType] = useState('card');
     const [loading, setLoading] = useState(true);
@@ -44,7 +43,7 @@ const AllBooks = () => {
   return (
     <div className="min-h-screen">
       <section className="container mx-auto">
-        <div className="flex justify-between pt-8 bg-gray-200">
+        <div className="flex justify-between pt-8">
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             onClick={toggleAvailableBooks}
