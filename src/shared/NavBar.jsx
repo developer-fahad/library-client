@@ -193,15 +193,15 @@ const NavBar = () => {
             ) : (
               <div className="flex items-center md:gap-8 gap-2">
                 <Link to="/login">
-                  <button className="xl:px-3 px-2 xl:py-2 md:py-2 md:px-5 py-1 md:font-bold font-semibold md:text-base text-sm bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-cyan-800">
+                  <button className="xl:px-8 px-2 xl:py-2 md:py-2 md:px-5 py-1 md:font-bold font-semibold md:text-base text-sm border-2 border-green-700 text-green-700 bg-transparent rounded-full transition-all duration-500 hover:text-white hover:bg-gradient-to-r hover:from-green-700 hover:to-cyan-800 hover:border-green-700">
                     Login
                   </button>
                 </Link>
-                <Link to="/register">
+                {/* <Link to="/register">
                   <button className="xl:px-3 px-2 xl:py-2 md:py-2 md:px-5 py-1 md:font-bold font-semibold md:text-base text-sm bg-gradient-to-r from-green-700 to-cyan-800 text-white">
                     Register
                   </button>
-                </Link>
+                </Link> */}
               </div>
             )}
           </div>
