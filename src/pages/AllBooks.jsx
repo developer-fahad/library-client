@@ -11,8 +11,22 @@ const AllBooks = () => {
   console.log(books);
   const [showAvailableBooks, setShowAvailableBooks] = useState(false);
     const [viewType, setViewType] = useState('card');
+    const [loading, setLoading] = useState(true);
+
     axios('https://library-server-pink.vercel.app/books', {withCredentials: true})
-    .then(res => setBooks(res.data))
+    .then(res => {
+      setBooks(res.data);
+      setLoading(false)
+    })
+     
+
+    if (loading) {
+      return (
+        <div className="min-h-screen flex justify-center items-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-gray-900"></div>
+        </div>
+      );
+    }
 
   const toggleAvailableBooks = () => {
     setShowAvailableBooks((prevState) => !prevState);
