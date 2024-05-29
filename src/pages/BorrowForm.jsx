@@ -17,7 +17,8 @@ const BorrowForm = () => {
   const handleBorrow = (e) => {
     e.preventDefault();
     const form = e.target;
-    const borrowDate = form.borrowDate.value;
+    // const borrowDate = form.borrowDate.value;
+    const borrowDate = new Date().toISOString().split('T')[0];
     const returnDate = form.returnDate.value;
     const userName = form.userName.value;
     const email = form.email.value;
@@ -67,7 +68,7 @@ const BorrowForm = () => {
       <section className="container mx-auto">
         <div className="h-full flex justify-center items-center">
           <form onSubmit={handleBorrow} className=" md:w-2/6 w-full p-8 shadow-xl rounded-md border bg-white">
-            <div>
+            {/* <div>
               <label><strong>Borrow Date</strong></label>
               <input
                 className="w-full border px-2"
@@ -76,7 +77,7 @@ const BorrowForm = () => {
                 name="borrowDate"
                 id=""
               />
-            </div>
+            </div> */}
             <div className=" py-4">
               <label><strong>Return Date</strong></label>
               <input

@@ -21,7 +21,8 @@ const ModalForm = ({ onCloseModal }) => {
   const handleBorrow = (e) => {
     e.preventDefault();
     const form = e.target;
-    const borrowDate = form.borrowDate.value;
+    // const borrowDate = form.borrowDate.value;
+    const borrowDate = new Date().toISOString().split('T')[0];
     const returnDate = form.returnDate.value;
     const userName = form.userName.value;
     const email = form.email.value;
@@ -38,17 +39,17 @@ const ModalForm = ({ onCloseModal }) => {
     };
     console.log(borrow);
 
-    fetch('https://library-server-pink.vercel.app/borrow', {
-      method: 'POST',
+    fetch("https://library-server-pink.vercel.app/borrow", {
+      method: "POST",
       headers: {
-          'content-type': 'application/json'
+        "content-type": "application/json",
       },
-      body: JSON.stringify(borrow)
+      body: JSON.stringify(borrow),
     })
-    .then(res => res.json())
-    .then(data => {
-      console.log(data);
-      if (data.insertedId) {
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
           Swal.fire({
             title: "Success!",
             text: "Borrowed Successfully!",
@@ -57,14 +58,14 @@ const ModalForm = ({ onCloseModal }) => {
           });
           // Swal.fire("New Coffee Added Successfully!")
           onCloseModal();
-          navigate('/borrowedbooks');
+          navigate("/borrowedbooks");
         }
-    })
-    .catch((error) => {
-      toast.error("Already borrowed this book!.");
-      console.error("Error borrowing book:", error);
+      })
+      .catch((error) => {
+        toast.error("Already borrowed this book!.");
+        console.error("Error borrowing book:", error);
         onCloseModal();
-    });
+      });
   };
 
   return (
@@ -75,7 +76,7 @@ const ModalForm = ({ onCloseModal }) => {
             onSubmit={handleBorrow}
             className=" md:w-2/6 w-full p-8 shadow-xl rounded-md border bg-white"
           >
-            <div>
+            {/* <div>
               <label>
                 <strong>Borrow Date</strong>
               </label>
@@ -86,7 +87,7 @@ const ModalForm = ({ onCloseModal }) => {
                 name="borrowDate"
                 id=""
               />
-            </div>
+            </div> */}
             <div className=" py-4">
               <label>
                 <strong>Return Date</strong>

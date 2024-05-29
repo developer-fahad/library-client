@@ -40,7 +40,6 @@ const CatItems = () => {
   return (
     <div className="min-h-screen">
       <section className="container mx-auto">
-        <h1>Total Matched Data: {books.length}</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-3 md:gap-5 lg:gap-8">
           {books?.map((item) => (
             <MatchingBooksCard key={item._id} item={item}></MatchingBooksCard>

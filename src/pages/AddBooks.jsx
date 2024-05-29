@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../providers/AuthProvider";
+import { toast } from "react-toastify";
 
 const AddBooks = () => {
   const { user } = useContext(AuthContext);
@@ -18,6 +19,10 @@ const AddBooks = () => {
     const user = form.user.value;
     const email = form.email.value;
     const content = form.content.value;
+
+    if (quantity < 0) {
+      return toast.error("Quantity cannot be negative");
+    }
 
     // console.log(form);
 

@@ -1,4 +1,6 @@
 
+import { GoStar, GoStarFill } from "react-icons/go";
+import Rating from "react-rating";
 import { Link } from "react-router-dom";
 
 const BooksTable = ({ books }) => {
@@ -29,7 +31,13 @@ const BooksTable = ({ books }) => {
               <td>{book.name}</td>
               <td>{book.author}</td>
               <td>{book.category}</td>
-              <td>{book.rating}</td>
+              <td><Rating
+                className="mt-1"
+                emptySymbol={<GoStar className="" />}
+                fullSymbol={<GoStarFill className="text-orange-500" />}
+                initialRating={book.rating}
+                readonly
+              /></td>
               <th>
                 <Link to={`/updatebook/${book._id}`}>
                   <button className="px-5  py-3 btn-block rounded-lg bg-rose-500 text-white font-bold">
